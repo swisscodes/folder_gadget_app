@@ -1,15 +1,22 @@
 import React, {useContext} from 'react';
-import {ShowChildren} from '../context/showchildren';
+import ShowContext from '../context/show-context';
+
 
 export default function Folder(props) {
-    const {state, setState} = useContext(ShowChildren);
-    const HandleClick = () => setState(!state);
+
+    // const {state, setState} = useContext(ShowChildren);
+    // const HandleClick = (event) => {
+    //     console.log(event.target.id, 'eventttt')
+    //     //setState(!state)
+    // }
+    //console.log(props, 'console----')
+    const context = useContext(ShowContext)
     return (
         <div>
-            <span onClick={HandleClick}><i className="blue folder icon"></i></span>
+            <span onClick={context.clicked}> <i id={props.name} className="blue folder icon"></i> </span>
                 {props.name}
             <div style={{ marginLeft: "17px" }}>
-                {state ? props.children : null}
+                {((context.show && props.name === context.folderName) && props.children)}
             </div>
         </div>
 
