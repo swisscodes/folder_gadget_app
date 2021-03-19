@@ -8,11 +8,12 @@ function App() {
         <Folder name="Music">
           <File name="dogs.jpeg" />
           <File name="cats.jpeg" />
+          <File name="sing.mp3" />
         </Folder>
       </Folder>
       <Folder name="Applications">
         <File name="ok.jpeg" />
-        <File name="big.jpeg" />
+        <File name="big.png" />
       </Folder>
     </div>
     
